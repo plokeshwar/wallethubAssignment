@@ -29,7 +29,7 @@ After cloning this project into your system folder, use below steps:
 
 2) Update WebDriver-Manager to get latest binaries
 
-		node_modules/protractor/bin/webdriver-manager update
+	node node_modules/protractor/bin/webdriver-manager update
 	 
 3)  Run tests using protractor installed locally as below:
     
@@ -43,7 +43,8 @@ Note: Windows users, use node at start of command to update/start webdriver-mana
 4) Reports can be seen at Reports folder with failure screenshots.
 
 
-#Scenarios Covered
+##Scenarios Covered
+	
 	1. Validating if a new user can signup
 	2. Validating if an duplicate user tries to signup
 	3. Validating when user chooses $no. of items then the cart reflects $no. items
