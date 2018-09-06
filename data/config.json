@@ -1,0 +1,9 @@
+{
+	"test":{
+			"appUrl": "https://redmart.com/"
+		},
+		
+	"dev":{
+			"appUrl": "https://redmart.com/"
+		}
+}
