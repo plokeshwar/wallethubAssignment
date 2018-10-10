@@ -2,8 +2,8 @@
 
 var HomePage = function() {
 
-    this.navigateToRedMart = function(){
-        browser.driver.get('https://redmart.com/')
+    this.navigateToSite = function(){
+        browser.driver.get('https://wallethub.com/profile/test_insurance_company/')
         browser.sleep(3000)
         browser.driver.manage().window().maximize();
     }
