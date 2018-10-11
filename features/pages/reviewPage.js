@@ -27,6 +27,8 @@ var HomePage = function() {
             browser.sleep(5000)
         }
 
+    
+
     this.selectPolicy = function(param){
         browser.sleep(5000)
         waitForElement('xpath', '//div[@class=\'dropdown-list-new\']//span[@class=\'drop-arrow\']').click();
@@ -35,18 +37,48 @@ var HomePage = function() {
         browser.sleep(5000)
     }
 
+    this.selectRating = function(param){
+        waitForElement('xpath', '//span[@id=\'overallRating\']//a['+param+']').click();
+        browser.sleep(5000)
+    }
 
     this.enterReview = function(param){
         browser.sleep(5000)
-        var txt = ""
-        var value = randomWords({ exactly: param, join: ' ' }).toString()
-       // console.log(value)
-        /*value.forEach(function(element) {
-            txt = txt+" "+element
-          });
-*/
-        waitForElement('xpath', '//textarea[@name=\'review\']').sendKeys(value);
+        waitForElement('xpath', '//textarea[@name=\'review\']').sendKeys(param);
+        browser.sleep(5000)
     }
+
+    this.clickSubmit = function(param){
+        var el = waitForElement('xpath', '//input[@type=\'submit\']')
+        el.click();
+        browser.sleep(5000)
+        }
+
+    this.clickLogin = function(){
+        waitForElement('xpath', '//a[@class=\'login\']').click();
+        browser.sleep(2000)
+    }
+
+    this.enterUserEmail = function(param){
+        waitForElement('xpath', '//input[@name="em"]').sendKeys(param);
+    }
+
+    this.enterPassword = function(param){
+        waitForElement('xpath', '//input[@name="pw"]').sendKeys(param);
+    }
+
+    this.clickLoginButton = function(){
+        waitForElement('xpath', '//button//span').click();
+        browser.sleep(2000)
+    }
+
+    this.login = function(username, pwd){
+        this.clickLogin();
+        this.enterUserEmail(username);
+        this.enterPassword(pwd);
+        this.clickLoginButton();
+    }
+
 
 
     function waitForElement(findType, findValue){
